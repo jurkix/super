@@ -1,0 +1,65 @@
+.c-teaser
+	fluidProp(height, 500px, 850px)
+	color #fff
+	background transparent url('../img/bg-teaser.png') no-repeat center center
+	background-size auto 100%
+	position relative
+	&:before
+		width 100%
+		height 100%
+		position absolute
+		left 0
+		top 0
+		content ''
+		background rgb(79,223,198)
+		background linear-gradient(90deg, rgba(79,223,198,1) 0%, rgba(212,133,232,1) 100%)
+		z-index -1
+	&:after
+		width 100%
+		height 35px
+		position absolute
+		left 0
+		bottom -2px
+		content ''
+		background transparent url(../img/teaser-arrow.svg) repeat-x center bottom
+		background-size auto 38px
+	
+	.container
+		height 100%
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		text-align center
+
+	.logo
+		width 400px
+		height 25px
+		position absolute
+		top 60px
+		left 50%
+		transform translateX(-50%)
+	
+	h1
+		width 100%
+		max-width 750px
+		font-size 72px
+		fluidProp(font-size, 25px, 72px)
+		font-weight black
+		text-transform uppercase
+		fluidProp(margin-bottom, 20px, 40px)
+	
+	p
+		width 100%
+		max-width 1175px
+		fluidProp(font-size, 18px, 37px)
+		fluidProp(margin-bottom, 30px, 60px)
+
+	@media (max-width: mobileMaxWidth)
+		height auto
+		padding 60px 0 80px
+		background none
+		.logo
+			width 200px
+			height 13px
+			top 50px

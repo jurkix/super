@@ -1,0 +1,9 @@
+// *** Fluid props
+fluidProp(prop, minSize, maxSize, minWidth = mobileMaxWidth, maxWidth = 1300px)
+	{prop}: maxSize
+	@media screen and (max-width: minWidth)
+		{prop}: minSize
+	@media screen and (min-width: minWidth)
+		{prop}: "calc(%s + %s * (100vw - %s) / %s)" % (minSize unit(maxSize - minSize, '') minWidth unit(maxWidth - minWidth, ''))
+	@media screen and (min-width: maxWidth)
+		{prop}: maxSize

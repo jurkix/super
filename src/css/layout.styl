@@ -1,0 +1,81 @@
+// *** Reset
+*,
+*::before,
+*::after
+	box-sizing: border-box
+
+// *** Typography
+html {
+	color bodyColor
+	background bodyBg
+	font-family fontFamily
+	font-family fontPrimary
+	fluidProp(font-size, 18px, fontSize)
+	line-height lineHeight
+	overflow-x hidden
+	max-width 100%
+}
+
+h1,.h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+	font-family fontPrimary
+	font-weight bold
+	line-height 1.2
+	margin 40px 0 vSpace
+	&:first-child
+		margin-top 0
+	&:last-child
+		margin-bottom 0
+
+h1, .h1,
+h2, .h2
+	fluidProp(font-size, 25px, 56px)
+h3, .h3
+	fluidProp(font-size, 20px, 24px)
+h4, .h4
+	font-size 18px
+h5, .h5
+	font-size 14px
+h6, .h6
+	font-size 12px
+
+p
+	margin 0 0 vSpace
+
+a
+	color linkColor
+	text-decoration underline
+	transition color trs
+	&:hover
+		color linkColorHover
+		text-decoration none
+
+// *** Colors
+for size, breakpoint in breakpoints
+	bkey = size
+	size = breakpoint != 0 ? size + '-' : ''
+
+	@media (min-width: breakpoint)
+		[class][class]
+			for key, value in colors
+				.color-{size}{key}
+					color: value
+				.bg-{size}{key}
+					background-color: value
+
+// *** Container
+.container
+	width 100%
+	margin-left auto
+	margin-right auto
+	text-align center
+
+	for name, size in containers
+		if name == 'main'
+			max-width: size
+		else
+			&.{name}
+				max-width: size
+
+	@media (max-width: tabletMaxWidth)
+		padding-left 20px
+		padding-right 20px

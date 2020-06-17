@@ -1,0 +1,45 @@
+.c-footer
+	fluidProp(font-size, 18px, 19px)
+	padding 100px 0
+	background: colors.lightGray
+	
+	.img-wrapper
+		margin-bottom 60px
+		.img
+			width 99px
+			height auto
+			position relative
+			margin-left auto
+			margin-right auto
+			img
+				width 100%
+				opacity 1
+				transition transform trs, opacity trs
+				&:last-child
+					position absolute
+					top 0
+					left 0
+			&:hover
+				img
+					&:first-child
+						transform translate(-10px, -5px)
+						opacity 0.5
+					&:last-child
+						transform translate(10px, 5px)
+						opacity 0.5
+
+	.c-btn
+		margin-bottom 30px
+
+	p + p
+		margin-top 30px
+
+	@media (max-width: mobileMaxWidth)
+		padding 50px 0
+		.img-wrapper
+			margin-bottom 30px
+			.img
+				width 45px
+		p
+			br
+				display none

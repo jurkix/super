@@ -1,0 +1,66 @@
+.c-header
+	position fixed
+	top 0
+	left 0
+	width 100%
+	height 84px
+	border-bottom 1px solid transparent
+	z-index 99
+	transition border trs, background trs
+	display none
+
+	.container
+		display flex
+		flex-direction row
+		align-items center
+		justify-content space-between
+		height 100%
+
+		.logo
+			width 400px
+			height 25px
+		
+		.phone
+			position relative
+			width 40px
+			height 42px
+			.anim
+				position absolute
+				left 0
+				top 0
+				pointer-events none
+			&:hover
+				.anim
+					animation hoverPhone 1s infinite;
+
+		.logo,
+		.phone
+			opacity 0
+			transition opacity trs
+
+	&.sticky
+		display block
+		background-color rgba(255,255,255, 0.85)
+		border-color #0a201d
+		.logo,
+		.phone
+			opacity 1
+
+	@media (max-width: mobileMaxWidth)
+		height 64px
+		.container
+			.logo
+				width 200px
+				height 13px
+			.phone
+				width 30px
+				height 31px
+
+
+@keyframes hoverPhone
+	0%, 100%
+		transform translate(0, 0)
+		opacity 1
+	50%
+		transform translate(2px, -2px)
+		opacity 0.5

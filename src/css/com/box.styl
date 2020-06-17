@@ -1,0 +1,58 @@
+.c-box
+	fluidProp(font-size, 18px, 19px)
+	background #fff
+	padding 30px
+	border-radius 10px
+	text-align center
+	box-shadow 0px 0px 30px 0px rgba(0,0,0,0.15)
+
+	*::-ms-backdrop, &:nth-child(1)
+		grid-area a
+	*::-ms-backdrop, &:nth-child(2)
+		grid-area b
+	*::-ms-backdrop, &:nth-child(3)
+		grid-area c
+
+	.img-wrapper
+		display block
+		display flex
+		height 290px
+		align-items center
+		justify-content center
+		margin-bottom 25px
+		img
+			max-width 100%
+			max-height 100%
+
+	.title
+		fluidProp(font-size, 20px, 27px)
+		display inline-block
+		margin-bottom 30px
+
+	.desc
+		margin-bottom 30px
+
+	.info
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		.text
+			font-weight bold
+			fluidProp(font-size, 16px, 21px)
+			& + .c-btn
+				margin-left 20px
+
+	@media (max-width: tabletMaxWidth)
+		.img-wrapper
+			height 120px
+		.info
+			flex-direction column
+			.text
+				margin-bottom 10px
+				& + .c-btn
+					margin-left 0
+
+	@media (max-width: mobileMaxWidth)
+		& + .c-box
+			margin-top 30px
